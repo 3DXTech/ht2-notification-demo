@@ -4,7 +4,10 @@ This repository shows how to connect to the SignalR Hub of the Gearbox3d HT2 and
 
 For a .net application you need to install `Microsoft.AspNetCore.SignalR.Client` to subscribe to the SignalR Hub built into the HT2 HMI. 
 
-Add logic to the 'PrintComplete' event to POST to a Web API so you can receive completion notification messages wherever you would like.
+There are currently 2 events that will send a message out with SignalR. You can subscribe to these messages and relay them wherever is best applicable for your organization.
+
+- `PrintComplete` will send a short string containing the print duration upon print completion.
+- `RunoutDetected` will send a message when the machine runs out of material during a print. This notification currently will be sent whether or not there is backup material loaded.
 
 Here are some references on how to post messages to common chat apps programatically
 
